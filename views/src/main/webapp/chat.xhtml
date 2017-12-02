@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <br/><br/>
+
+    <br/><br/>
+
+    <div style="width: 404px; height: 222px; overflow: auto; background: #c7b39b  repeat-y; ">  <!--url(img/1.jpg)-->
+        <br/><br/>
+        <h3>Chat:</h3><br/>
+
+        <h:dataTable value="#{exampleCDI.goods}" var="item">
+            <h:column>
+                <h:outputText value="#{item.name}" />
+            </h:column>
+
+            <h:column>
+                <h:outputText value="#{item.price}" />
+            </h:column>
+        </h:dataTable>
+        <br/><br/>
+    </div>
+
+    <h:inputTextarea height="50em" width="373em" id="chInput" />
+
+    <br/><br/>
+
+    <br/><br/>
+
+    <h:outputText value="#{chatManager.generateNewUser}}" />
+
+    <h:form>
+        <h:panelGrid columns="3" layout="grid">
+            <h:outputLabel for="name" value="Kind of good to add: " title="name..."/>
+            <h:inputText id="name" value="#{exampleCDI.name}" title="name..." required="true" requiredMessage="this field cant be empty"/>
+
+            <h:message id="m0" for="name" style="color:red"/>
+
+            <h:outputLabel for="price" value="Price: " title="price..."/>
+            <h:inputText id="price" value="#{exampleCDI.price}" title="price..." required="true" requiredMessage="price field must not be empty"/>
+            <h:message id="m" for="price" style="color:red"/>
+
+
+
+
+            <h:commandButton value="Send Message ;)" action="#{chatManager.messageSent}"/>
+
+        </h:panelGrid>
+    </h:form>
+
+</f:view>
+</html>

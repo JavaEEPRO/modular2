@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="views:war exploded">
+    <output-path>$PROJECT_DIR$/views/target/modular</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="views" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="chat-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="chat" />
+          </element>
+          <element id="archive" name="logic-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="logic" />
+          </element>
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.1" />
+          <element id="library" level="project" name="Maven: javax.faces:jsf-api:2.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/views/target/modular/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="views/web/Web" />
+    </root>
+  </artifact>
+</component>
